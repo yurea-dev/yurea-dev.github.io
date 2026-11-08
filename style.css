@@ -1,0 +1,147 @@
+/* 色はすだちの Palette（docs/05_design_system.md）と同じ。フォントは外から読まない（端末の明朝・ゴシック）。 */
+:root {
+  --ground: #f3eee6;
+  --surface: #fbf8f3;
+  --ink: #2a241f;
+  --ink-sub: #6e645a;
+  --ink-quiet: #b9ac9a;
+  --hairline: #ddd4c7;
+  --accent: #8a5a2b;
+  --mincho: "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", serif;
+  --gothic: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #1e1a16;
+    --surface: #2a241f;
+    --ink: #f3eee6;
+    --ink-sub: #b9ac9a;
+    --ink-quiet: #6e645a;
+    --hairline: #3d352e;
+    --accent: #c98a4b;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--gothic);
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+}
+
+a { color: var(--accent); text-underline-offset: 0.2em; }
+
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+}
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.site-header .brand {
+  font-family: var(--mincho);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-header nav a {
+  color: var(--ink-sub);
+  font-size: 14px;
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+h1, h2, h3 {
+  font-family: var(--mincho);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+h1 { font-size: 28px; margin: 0 0 16px; }
+h2 { font-size: 20px; margin: 48px 0 12px; padding-top: 24px; border-top: 1px solid var(--hairline); }
+h3 { font-size: 17px; margin: 28px 0 4px; }
+
+.lead { font-family: var(--mincho); font-size: 18px; line-height: 2; }
+
+.sub { color: var(--ink-sub); font-size: 14px; }
+
+ul { padding-left: 1.4em; }
+li { margin: 4px 0; }
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  margin: 16px 0;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.card img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+.card .name { font-family: var(--mincho); font-weight: 700; font-size: 18px; }
+
+.button {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--surface);
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+.hero { text-align: center; }
+.hero .icon { width: 96px; height: 96px; border-radius: 22px; }
+.hero h1 { font-size: 34px; margin: 16px 0 4px; letter-spacing: 0.2em; }
+
+.shots {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin: 32px -20px;
+  padding: 0 20px 8px;
+}
+
+.shots img {
+  width: 220px;
+  flex: none;
+  border-radius: 16px;
+  border: 1px solid var(--hairline);
+  scroll-snap-align: center;
+}
+
+.site-footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-sub);
+  font-size: 13px;
+}
+
+.site-footer a { color: var(--ink-sub); margin-right: 16px; }
