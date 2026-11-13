@@ -101,7 +101,7 @@ li { margin: 4px 0; }
   text-decoration: none;
 }
 
-.card img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+.card img { width: 64px; height: 64px; border-radius: 15px; flex: none; box-sizing: border-box; border: 1px solid var(--hairline); }
 .card .name { font-family: var(--mincho); font-weight: 700; font-size: 18px; }
 
 .button {
@@ -116,7 +116,7 @@ li { margin: 4px 0; }
 }
 
 .hero { text-align: center; }
-.hero .icon { width: 96px; height: 96px; border-radius: 22px; }
+.hero .icon { width: 96px; height: 96px; border-radius: 22px; box-sizing: border-box; border: 1px solid var(--hairline); }
 .hero h1 { font-size: 34px; margin: 16px 0 4px; letter-spacing: 0.2em; }
 
 .shots {
